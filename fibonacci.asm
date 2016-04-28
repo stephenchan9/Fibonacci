@@ -1,13 +1,5 @@
-; Assignment 1 Fibonacci
-; Stephen Chan
-; 9419
-; CPSC 240 Assignment 1
-; Partner: Daniel Berumen
-; Creates a fibonacci array of values.
 
-.386
-.model flat,stdcall
-.stack 4096
+Include Irvine32.inc
 ExitProcess proto,dwExitCode:dword
 
 .data
@@ -43,7 +35,8 @@ main proc
 	mov ebx,1							; Set the initial value of ebx to 1
 
 	call generate_fibonacci				; Calls the procedure
-
+	
+	call WaitMsg
 	invoke ExitProcess,0
 main endp
 end main
